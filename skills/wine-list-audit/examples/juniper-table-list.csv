@@ -1,0 +1,20 @@
+producer,name,region,grape,type,vintage,format,cost,price,btg,glass_price
+Maison Imaginaire,Brut Réserve,Champagne,Chardonnay and Pinot Noir,sparkling,NV,750ml,42,135,no,
+Cellier des Songes,Crémant Rosé,Crémant de Loire,Cabernet Franc,sparkling,NV,750ml,18,62,no,
+Domaine du Faux Puits,Les Cailloux,Sancerre,Sauvignon Blanc,white,2023,750ml,19,72,yes,19
+Weingut Erfunden,Kabinett,Mosel,Riesling,white,2022,750ml,17,48,yes,18
+Hollow Oak Cellars,Reserve Chardonnay,Sonoma Coast,Chardonnay,white,2021,750ml,34,98,no,
+Clos des Chimères,Vieilles Vignes,Meursault,Chardonnay,white,2020,750ml,68,175,no,
+Tenuta Immaginaria,Bianco di Collina,Etna,Carricante,white,,750ml,15,52,yes,15
+Bodega Inventada,Blanco,Rías Baixas,Albariño,white,2023,75cl,16,55,no,
+Fabled Hill Estate,Dry Rosé,Côtes de Provence,Grenache and Cinsault,rose,2023,750ml,14,58,yes,14
+Château Nullepart,Cuvée Classique,Bordeaux Supérieur,Merlot and Cabernet Sauvignon,red,2019,750ml,16,52,yes,13
+Paper Moon Vineyards,Pinot Noir,Willamette Valley,Pinot Noir,red,2021,750ml,26,64,yes,18
+Bodega Inventada,Reserva,Rioja,Tempranillo,red,2018,750ml,24,74,no,
+Tenuta Immaginaria,Rosso,Langhe,Nebbiolo,red,2020,750ml,25,78,no,
+Domaine du Faux Puits,Les Coteaux,Côte-Rôtie,Syrah,red,2019,750ml,48,135,no,
+Château Nullepart,Grand Vin,Pauillac,Cabernet Sauvignon,red,2016,750ml,62,160,no,
+Château Nullepart,Grand Vin,Pauillac,Cabernet Sauvignon,red,2016,1.5L,124,290,no,
+Clos des Chimères,Les Grandes Terres,Barolo,Nebbiolo,red,2017,750ml,80,210,no,
+Bodega Inventada,Reserva,Rioja,Tempranillo,red,2018,750ml,24,78,no,
+Clos des Chimeres,Vielles Vignes,Meursault,Chardonnay,white,2020,750ml,68,175,no,

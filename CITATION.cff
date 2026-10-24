@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use these skills or their data, please cite them as below."
+title: "Hospitality Skills by Woody Wu"
+abstract: "Agent Skills for restaurant, hotel and sommelier work: a wine list audit, a list-only house sommelier with a reply checker, and a wine fact guard for evaluating AI-generated wine answers."
+type: software
+authors:
+  - given-names: Woody
+    family-names: Wu
+    website: "https://woodywusommelier.com"
+repository-code: "https://github.com/woodywu-sommelier/hospitality-skills"
+url: "https://woodywusommelier.com"
+license: MIT
+version: 0.1.0
+keywords:
+  - agent skills
+  - wine
+  - sommelier
+  - hospitality
+  - restaurants
+  - LLM evaluation
+  - hallucination

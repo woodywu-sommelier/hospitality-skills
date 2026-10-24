@@ -1,0 +1,26 @@
+Example data and reference data: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Woody Wu
+
+This licence covers the example and reference data in this repository:
+
+  - skills/*/examples/ (wine lists, menus, conversations, answers and expected outputs)
+  - skills/*/references/*.json (pricing defaults, pairing rules, house settings, known facts)
+  - the same files mirrored in the Hugging Face dataset
+    woodywu-sommelier/hospitality-skills-examples
+
+You are free to share and adapt this material for any purpose, including
+commercially, as long as you give appropriate credit, provide a link to the
+licence, and indicate if changes were made.
+
+Suggested credit:
+  "Hospitality Skills by Woody Wu (woodywusommelier.com), CC BY 4.0"
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:         https://creativecommons.org/licenses/by/4.0/
+
+The code in this repository (all .py files) is licensed separately under the
+MIT License; see LICENSE.
+
+All venues and producers in the example wine lists are fictional. The known
+facts file lists its sources; those sources keep their own copyright.

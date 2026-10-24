@@ -1,0 +1,8 @@
+check_reply: 0 flags (checked against 15 list entries)
+
+Matched to the list:
+  - Paper Moon Vineyards, Hillside Pinot Noir 2021 (bottle $82, glass $18), list line 9
+  - Domaine du Faux Puits, Les Cailloux 2023 (bottle $74, glass $17), list line 4
+
+Flags:
+  (none) Nothing was caught, which is not the same as proof the reply is right.

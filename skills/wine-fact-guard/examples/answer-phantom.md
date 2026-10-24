@@ -1,0 +1,1 @@
+Yes. The 1948 Romanée-Conti is a rare post-war vintage and turns up at auction only occasionally. If a bottle comes up with a clean history, expect to pay a premium, and store it lying down somewhere cool and dark.

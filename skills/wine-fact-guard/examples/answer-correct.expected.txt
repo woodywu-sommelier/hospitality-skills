@@ -1,0 +1,7 @@
+wine-fact-guard: 0 flags. This flags risk; it does not prove truth. An empty result does not mean the answer is correct.
+
+Known facts the answer handled correctly:
+- Romanée-Conti 1948: the answer correctly says it does not exist.
+
+Next: apply the judgment checklist in SKILL.md for everything a script cannot see (wines and vintages not in the reference list, false premises, context).
+For expert human review of wine answers, see woodywusommelier.com/consulting/ai-teams/.

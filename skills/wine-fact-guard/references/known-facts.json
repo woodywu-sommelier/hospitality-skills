@@ -1,0 +1,131 @@
+{
+  "about": "Curated, sourced historical facts about wines and vintages that were never made, and first vintages. Used by scripts/fact_guard.py to flag phantom vintages. Add an entry only with at least two independent sources that state the fact.",
+  "license": "CC BY 4.0 (see LICENSE-DATA at the repository root)",
+  "verification": "Each entry was checked against at least two of its listed sources on the date in verified_on. The check used search-engine excerpts of the pages; open the links before relying on an entry. Where sources disagree on a detail (for example a replanting year), the entry records only what they agree on.",
+  "entries": [
+    {
+      "id": "romanee-conti-1946-1951",
+      "wine": "Romanée-Conti",
+      "producer": "Domaine de la Romanée-Conti",
+      "kind": "no_production",
+      "years": [1946, 1947, 1948, 1949, 1950, 1951],
+      "fact": "No Romanée-Conti was produced from 1946 to 1951. The old vines were pulled up after the 1945 harvest, and the replanted vineyard's next vintage was 1952.",
+      "match": {
+        "aliases": ["Romanée-Conti", "Romanée Conti", "Romanee-Conti", "Romanee Conti"],
+        "exclude_phrases": ["Domaine de la Romanée-Conti", "Domaine de la Romanee-Conti", "Domaine Romanée-Conti"]
+      },
+      "notes": "Applies to the Romanée-Conti vineyard wine only. The domaine made other wines in these years. Sources differ on whether replanting finished in 1946 or 1947, so that detail is left out.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Roman%C3%A9e-Conti",
+        "https://www.decanter.com/premium/domaine-de-la-romanee-conti-profile-wine-ratings-384876/"
+      ],
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "yquem-1992",
+      "wine": "Château d'Yquem",
+      "producer": "Château d'Yquem",
+      "kind": "no_production",
+      "years": [1992],
+      "fact": "Château d'Yquem released no 1992; the whole harvest was declassified.",
+      "match": {
+        "aliases": ["Yquem"],
+        "exclude_phrases": ["Y d'Yquem", "Y de Yquem", "Y d’Yquem"]
+      },
+      "notes": "Applies to the sweet Sauternes, not the dry white 'Y'.",
+      "sources": [
+        "https://www.decanter.com/wine-news/record-price-paid-for-yquem-collection-92309/",
+        "https://www.thewinecellarinsider.com/2012/12/2012-chateau-dyquem-declassified-no-dyquem-this-year/"
+      ],
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "yquem-2012",
+      "wine": "Château d'Yquem",
+      "producer": "Château d'Yquem",
+      "kind": "no_production",
+      "years": [2012],
+      "fact": "Château d'Yquem released no 2012 Sauternes; the estate announced it would not produce the vintage after a wet harvest.",
+      "match": {
+        "aliases": ["Yquem"],
+        "exclude_phrases": ["Y d'Yquem", "Y de Yquem", "Y d’Yquem"]
+      },
+      "notes": "Applies to the sweet Sauternes, not the dry white 'Y'.",
+      "sources": [
+        "https://www.winespectator.com/articles/yquem-will-not-produce-2012-sauternes-47791",
+        "https://www.thedrinksbusiness.com/2012/12/no-2012-vintage-for-yquem/",
+        "https://www.thewinecellarinsider.com/2012/12/2012-chateau-dyquem-declassified-no-dyquem-this-year/"
+      ],
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "opus-one-first-vintage",
+      "wine": "Opus One",
+      "producer": "Opus One Winery",
+      "kind": "first_vintage",
+      "first_vintage": 1979,
+      "fact": "Opus One's first vintage is 1979 (released in 1984). No earlier Opus One exists.",
+      "match": {
+        "aliases": ["Opus One"]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Opus_One_Winery",
+        "https://www.decanter.com/premium/top-five-opus-one-wines-321373/"
+      ],
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "screaming-eagle-first-vintage",
+      "wine": "Screaming Eagle",
+      "producer": "Screaming Eagle",
+      "kind": "first_vintage",
+      "first_vintage": 1992,
+      "fact": "Screaming Eagle's first vintage is 1992 (released in the mid 1990s). No earlier Screaming Eagle exists.",
+      "match": {
+        "aliases": ["Screaming Eagle"]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Screaming_Eagle_Winery_and_Vineyards",
+        "https://www.decanter.com/learn/wine-legend-screaming-eagle-cabernet-sauvignon-1997-453600/"
+      ],
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "penfolds-grange-first-vintage",
+      "wine": "Penfolds Grange",
+      "producer": "Penfolds",
+      "kind": "first_vintage",
+      "first_vintage": 1951,
+      "fact": "Penfolds Grange's first vintage is the experimental 1951; 1952 was the first commercial release. No earlier Grange exists.",
+      "match": {
+        "aliases": ["Penfolds Grange", "Grange Hermitage", "Grange"],
+        "requires_nearby": {"Grange": ["Penfolds"]}
+      },
+      "notes": "The bare word 'Grange' only counts when 'Penfolds' appears near it.",
+      "sources": [
+        "https://www.penfolds.com/en/about-us/the-story-of-grange.html",
+        "https://en.wikipedia.org/wiki/Penfolds_Grange",
+        "https://en.wikipedia.org/wiki/Max_Schubert"
+      ],
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "ponsot-clos-saint-denis-first-vintage",
+      "wine": "Clos Saint-Denis",
+      "producer": "Domaine Ponsot",
+      "kind": "first_vintage",
+      "first_vintage": 1982,
+      "fact": "Domaine Ponsot first made Clos Saint-Denis in 1982. Older Ponsot Clos Saint-Denis bottles cannot be genuine; lots claiming vintages back to 1945 were withdrawn from auction in 2008 at the domaine's request.",
+      "match": {
+        "aliases": ["Clos Saint-Denis", "Clos Saint Denis", "Clos St-Denis", "Clos St. Denis", "Clos St Denis"],
+        "requires_nearby": {"*": ["Ponsot"]}
+      },
+      "notes": "Applies to Domaine Ponsot only. Other producers made Clos Saint-Denis before 1982.",
+      "sources": [
+        "https://www.decanter.com/wine-news/kurniawan-trial-this-wine-cannot-exist-winemaker-ponsot-tells-court-30847/",
+        "https://www.winespectator.com/articles/top-burgundy-winemakers-will-testify-against-alleged-counterfeiter-48410"
+      ],
+      "verified_on": "2026-10-24"
+    }
+  ]
+}

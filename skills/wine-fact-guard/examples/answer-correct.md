@@ -1,0 +1,1 @@
+There is no 1948 Romanée-Conti. The domaine pulled up the old vines after the 1945 harvest, and the replanted vineyard did not produce its next vintage until 1952. A bottle labelled 1948 Romanée-Conti cannot be genuine, so treat any such offer as a counterfeit and ask an independent specialist before going further.

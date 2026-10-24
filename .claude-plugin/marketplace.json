@@ -1,0 +1,24 @@
+{
+  "name": "hospitality-skills",
+  "owner": {
+    "name": "Woody Wu",
+    "url": "https://woodywusommelier.com"
+  },
+  "metadata": {
+    "description": "Agent Skills for restaurant, hotel and sommelier work, built by sommelier Woody Wu.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "hospitality-skills",
+      "description": "Wine list audit, a list-only house sommelier, and a wine fact guard for AI teams.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/wine-list-audit",
+        "./skills/house-somm",
+        "./skills/wine-fact-guard"
+      ]
+    }
+  ]
+}

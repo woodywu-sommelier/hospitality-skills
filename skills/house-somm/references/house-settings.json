@@ -1,0 +1,19 @@
+{
+  "to_be_confirmed_by_woody": true,
+  "about": "Venue settings for the house-somm skill and scripts/check_reply.py. Starting assumptions only; each venue should set its own.",
+  "currency_symbol": "$",
+  "escalate_at_or_above_bottle_price": 300,
+  "handoff_patterns": [
+    "sommelier",
+    "our team",
+    "member of (?:our|the) team",
+    "staff",
+    "manager",
+    "your server",
+    "someone (?:from|on) (?:the|our) (?:floor|team)",
+    "a person",
+    "human",
+    "in person"
+  ],
+  "budget_words_before_amounts": ["under", "below", "up to", "around", "about", "less than", "no more than", "within", "budget", "range", "between", "and"]
+}

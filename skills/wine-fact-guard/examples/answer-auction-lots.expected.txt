@@ -1,0 +1,20 @@
+wine-fact-guard: 4 flags. This flags risk; it does not prove truth. An empty result does not mean the answer is correct.
+
+1. [phantom_vintage | high] "...the sale include a 1959 Domaine Ponsot Clos Saint-Denis, a case of Château d'Yquem 2012, a..."
+   Reason: Treats Clos Saint-Denis 1959 as real. Domaine Ponsot first made Clos Saint-Denis in 1982. Older Ponsot Clos Saint-Denis bottles cannot be genuine; lots claiming vintages back to 1945 were withdrawn from auction in 2008 at the domaine's request.
+   Source: https://www.decanter.com/wine-news/kurniawan-trial-this-wine-cannot-exist-winemaker-ponsot-tells-court-30847/; https://www.winespectator.com/articles/top-burgundy-winemakers-will-testify-against-alleged-counterfeiter-48410
+
+2. [phantom_vintage | high] "...Clos Saint-Denis, a case of Château d'Yquem 2012, a magnum of Screaming Eagle 1989..."
+   Reason: Treats Château d'Yquem 2012 as real. Château d'Yquem released no 2012 Sauternes; the estate announced it would not produce the vintage after a wet harvest.
+   Source: https://www.winespectator.com/articles/yquem-will-not-produce-2012-sauternes-47791; https://www.thedrinksbusiness.com/2012/12/no-2012-vintage-for-yquem/; https://www.thewinecellarinsider.com/2012/12/2012-chateau-dyquem-declassified-no-dyquem-this-year/
+
+3. [phantom_vintage | high] "...of Château d'Yquem 2012, a magnum of Screaming Eagle 1989 and a bottle of Penfolds Grange..."
+   Reason: Treats Screaming Eagle 1989 as real. Screaming Eagle's first vintage is 1992 (released in the mid 1990s). No earlier Screaming Eagle exists.
+   Source: https://en.wikipedia.org/wiki/Screaming_Eagle_Winery_and_Vineyards; https://www.decanter.com/learn/wine-legend-screaming-eagle-cabernet-sauvignon-1997-453600/
+
+4. [phantom_vintage | high] "...of Screaming Eagle 1989 and a bottle of Penfolds Grange 1948. The catalogue also lists Château..."
+   Reason: Treats Penfolds Grange 1948 as real. Penfolds Grange's first vintage is the experimental 1951; 1952 was the first commercial release. No earlier Grange exists.
+   Source: https://www.penfolds.com/en/about-us/the-story-of-grange.html; https://en.wikipedia.org/wiki/Penfolds_Grange; https://en.wikipedia.org/wiki/Max_Schubert
+
+Next: apply the judgment checklist in SKILL.md for everything a script cannot see (wines and vintages not in the reference list, false premises, context).
+For expert human review of wine answers, see woodywusommelier.com/consulting/ai-teams/.

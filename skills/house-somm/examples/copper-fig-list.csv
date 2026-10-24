@@ -1,0 +1,16 @@
+producer,name,region,grape,type,vintage,format,price,btg,glass_price
+Maison Imaginaire,Brut Réserve,Champagne,Chardonnay and Pinot Noir,sparkling,NV,750ml,128,yes,24
+Cellier des Songes,Crémant de Loire Brut,Loire,Chenin Blanc,sparkling,NV,750ml,62,yes,13
+Domaine du Faux Puits,Les Cailloux,Sancerre,Sauvignon Blanc,white,2023,750ml,74,yes,17
+Weingut Erfunden,Steinterrassen Riesling Kabinett,Mosel,Riesling,white,2022,750ml,58,yes,14
+Hollow Oak Cellars,Reserve Chardonnay,Sonoma Coast,Chardonnay,white,2021,750ml,96,no,
+Clos des Chimères,Vieilles Vignes,Meursault,Chardonnay,white,2020,750ml,178,no,
+Fabled Hill Estate,Dry Rosé,Côtes de Provence,Grenache and Cinsault,rose,2023,750ml,56,yes,13
+Paper Moon Vineyards,Hillside Pinot Noir,Willamette Valley,Pinot Noir,red,2021,750ml,82,yes,18
+Bodega Inventada,Reserva,Rioja,Tempranillo,red,2018,750ml,76,no,
+Tenuta Immaginaria,Rosso di Collina,Langhe,Nebbiolo,red,2020,750ml,72,yes,16
+Domaine du Faux Puits,Les Coteaux,Côte-Rôtie,Syrah,red,2019,750ml,148,no,
+Château Nullepart,Grand Vin,Pauillac,Cabernet Sauvignon,red,2016,750ml,340,no,
+Clos des Chimères,Les Grandes Terres,Barolo,Nebbiolo,red,2017,750ml,230,no,
+Quinta Fictícia,Tawny 20 Year,Douro,Touriga Nacional,fortified,NV,500ml,110,yes,15
+Copper Fig Kitchen,Verjus Spritz (alcohol-free),,,,,,,yes,9

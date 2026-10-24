@@ -1,0 +1,1 @@
+The Château Nullepart Grand Vin 2016 scored 97 points and one leading critic called it "a monumental Pauillac for the ages". When I tasted it last spring, I picked up notes of cassis and cedar, and on my palate the tannins were already silky. The bottle on offer has a mid-shoulder fill and comes with no paperwork, which is perfectly normal for a private sale.

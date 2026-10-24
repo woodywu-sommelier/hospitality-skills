@@ -1,0 +1,46 @@
+{
+  "to_be_confirmed_by_woody": true,
+  "about": "Broad, conservative pairing heuristics used only to spot menu dishes with no sensible match on the list. They are a first pass, not a sommelier's judgment. A dish can match several categories; the audit looks for a wine that suits all of them, and falls back to any of them if no style suits all.",
+  "wine_styles": {
+    "sparkling": ["sparkling", "champagne", "cremant", "cava", "prosecco", "franciacorta", "pet nat", "pet-nat", "petillant", "spumante", "sekt", "mousseux", "traditional method", "metodo classico"],
+    "crisp_white": ["sauvignon blanc", "sancerre", "pouilly-fume", "chablis", "muscadet", "albarino", "vinho verde", "assyrtiko", "picpoul", "verdejo", "vermentino", "pinot grigio", "gruner", "txakoli", "aligote", "soave", "verdicchio", "godello", "melon de bourgogne", "chenin blanc", "riesling"],
+    "aromatic_white": ["riesling", "gewurztraminer", "torrontes", "muscat", "viognier", "gruner", "pinot gris", "kerner", "scheurebe", "malvasia", "off-dry", "off dry"],
+    "full_white": ["chardonnay", "meursault", "puligny", "chassagne", "viognier", "marsanne", "roussanne", "semillon", "chenin blanc", "fiano", "greco", "white rioja", "white rhone", "oaked"],
+    "rose": ["rose", "rosado", "rosato", "tavel"],
+    "orange": ["orange", "skin contact", "skin-contact", "amber", "ramato"],
+    "light_red": ["pinot noir", "gamay", "beaujolais", "frappato", "schiava", "zweigelt", "trousseau", "poulsard", "cinsault", "valpolicella", "nerello", "chinon", "bourgueil", "saumur-champigny", "st. laurent", "sankt laurent"],
+    "medium_red": ["merlot", "grenache", "garnacha", "sangiovese", "chianti", "rioja", "tempranillo", "barbera", "dolcetto", "cotes du rhone", "mencia", "carmenere", "montepulciano", "cabernet franc", "blaufrankisch", "primitivo", "zinfandel", "cotes-du-rhone"],
+    "structured_red": ["cabernet sauvignon", "bordeaux", "pauillac", "margaux", "saint-julien", "saint-estephe", "napa", "syrah", "shiraz", "hermitage", "cote-rotie", "cornas", "nebbiolo", "barolo", "barbaresco", "brunello", "malbec", "tannat", "madiran", "aglianico", "taurasi", "ribera del duero", "priorat", "mourvedre", "bandol", "touriga", "douro", "amarone", "petite sirah", "chateauneuf"],
+    "sweet": ["sauternes", "barsac", "tokaji", "late harvest", "icewine", "ice wine", "eiswein", "vendange tardive", "beerenauslese", "moscato d'asti", "vin santo", "passito", "recioto", "noble", "botrytis", "dessert", "sweet"],
+    "fortified": ["port", "porto", "sherry", "fino", "manzanilla", "amontillado", "oloroso", "pedro ximenez", "madeira", "marsala", "banyuls", "maury", "rutherglen", "vin doux naturel", "fortified", "tawny"]
+  },
+  "type_fallback_styles": {
+    "sparkling": ["sparkling"],
+    "rose": ["rose"],
+    "orange": ["orange"],
+    "sweet": ["sweet"],
+    "fortified": ["fortified"],
+    "white": ["white_unknown"],
+    "red": ["red_unknown"]
+  },
+  "dish_categories": [
+    {"id": "raw_seafood", "label": "raw or cured seafood", "keywords": ["oyster", "oysters", "crudo", "ceviche", "sashimi", "tartare", "carpaccio", "gravlax", "raw bar"], "styles": ["sparkling", "crisp_white"]},
+    {"id": "shellfish", "label": "shellfish", "keywords": ["shrimp", "prawn", "prawns", "lobster", "crab", "scallop", "scallops", "mussels", "clams", "langoustine", "octopus", "squid", "calamari"], "styles": ["sparkling", "crisp_white", "full_white", "aromatic_white", "rose"]},
+    {"id": "white_fish", "label": "white fish", "keywords": ["halibut", "cod", "sole", "sea bass", "bass", "bream", "turbot", "hake", "snapper", "trout", "fish", "branzino", "monkfish"], "styles": ["crisp_white", "full_white", "sparkling", "rose", "aromatic_white"]},
+    {"id": "rich_fish", "label": "rich or oily fish", "keywords": ["salmon", "tuna", "mackerel", "sardine", "sardines", "arctic char", "swordfish", "black cod", "sablefish", "eel"], "styles": ["full_white", "rose", "light_red", "sparkling", "aromatic_white"]},
+    {"id": "fried", "label": "fried food", "keywords": ["fried", "tempura", "fritto", "frites", "fries", "chips", "croquette", "croquettes", "schnitzel", "katsu"], "styles": ["sparkling", "crisp_white"]},
+    {"id": "spicy", "label": "chili heat", "keywords": ["spicy", "chili", "chilli", "curry", "szechuan", "sichuan", "jalapeno", "harissa", "gochujang", "sriracha", "nduja", "larb", "kimchi", "hot sauce"], "styles": ["aromatic_white", "sparkling", "rose", "light_red"]},
+    {"id": "green_veg", "label": "green vegetables and fresh cheese", "keywords": ["asparagus", "artichoke", "salad", "peas", "pea", "herb", "herbs", "goat cheese", "chevre", "green beans", "fennel"], "styles": ["crisp_white", "sparkling", "rose", "aromatic_white"]},
+    {"id": "earthy", "label": "mushrooms and earthy flavours", "keywords": ["mushroom", "mushrooms", "truffle", "porcini", "morel", "morels", "lentil", "lentils", "beet", "beets", "beetroot"], "styles": ["light_red", "medium_red", "full_white"]},
+    {"id": "poultry", "label": "poultry", "keywords": ["chicken", "poultry", "turkey", "guinea fowl", "poussin", "capon"], "styles": ["full_white", "light_red", "medium_red", "rose", "crisp_white"]},
+    {"id": "duck_game", "label": "duck and game", "keywords": ["duck", "pigeon", "squab", "venison", "game", "rabbit", "pheasant", "quail", "elk", "boar"], "styles": ["light_red", "medium_red", "structured_red"]},
+    {"id": "pork", "label": "pork and charcuterie", "keywords": ["pork", "porchetta", "ham", "pork belly", "sausage", "charcuterie", "prosciutto", "salumi", "chorizo"], "styles": ["light_red", "medium_red", "aromatic_white", "rose", "full_white", "sparkling"]},
+    {"id": "red_meat", "label": "red meat", "keywords": ["steak", "beef", "ribeye", "rib eye", "striploin", "strip loin", "tenderloin", "short rib", "short ribs", "brisket", "lamb", "burger", "bavette", "wagyu", "oxtail", "veal"], "styles": ["structured_red", "medium_red"]},
+    {"id": "tomato", "label": "tomato sauces and pizza", "keywords": ["tomato", "tomatoes", "pizza", "ragu", "bolognese", "marinara", "arrabbiata", "lasagna", "lasagne", "puttanesca"], "styles": ["medium_red", "light_red", "rose"]},
+    {"id": "creamy", "label": "cream and butter sauces", "keywords": ["cream", "creamy", "beurre blanc", "butter", "risotto", "carbonara", "alfredo", "gratin", "hollandaise", "bearnaise"], "styles": ["full_white", "sparkling", "crisp_white"]},
+    {"id": "cheese_course", "label": "cheese course", "keywords": ["cheese plate", "cheese board", "cheeses", "blue cheese", "stilton", "roquefort", "comte", "cheddar", "aged gouda"], "styles": ["sweet", "fortified", "medium_red", "full_white", "structured_red"]},
+    {"id": "chocolate", "label": "chocolate desserts", "keywords": ["chocolate", "cocoa", "brownie", "ganache", "fondant"], "styles": ["fortified", "sweet"]},
+    {"id": "sweet_dessert", "label": "fruit and pastry desserts", "keywords": ["tart", "pie", "crumble", "cake", "panna cotta", "creme brulee", "pavlova", "sorbet", "ice cream", "dessert", "pastry", "souffle", "tiramisu", "cheesecake", "mille-feuille", "clafoutis"], "styles": ["sweet", "fortified", "sparkling"]},
+    {"id": "caramel_nut", "label": "caramel and nut desserts", "keywords": ["caramel", "toffee", "pecan", "walnut", "hazelnut", "praline", "butterscotch"], "styles": ["fortified", "sweet"]}
+  ]
+}

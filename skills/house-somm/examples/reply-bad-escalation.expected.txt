@@ -1,0 +1,12 @@
+check_reply: 3 flags (checked against 15 list entries)
+
+Matched to the list:
+  - Château Nullepart, Grand Vin 2016 (bottle $340), list line 13
+
+Flags:
+  1. [pushes_drinking] "safe for your partner. And why not another bottle with dessert to keep the night going?"
+     Phrase that nudges the guest to drink more. Offer, never push.
+  2. [escalation_missing] "Château Nullepart, Grand Vin 2016"
+     Bottle at or above $300 recommended with no offer to bring in the sommelier or a member of the team.
+  3. [escalation_missing] "sulfite"
+     Allergy or intolerance mentioned; the reply must hand over to a person and not give medical or ingredient assurances.

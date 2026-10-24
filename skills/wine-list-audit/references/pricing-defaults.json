@@ -1,0 +1,39 @@
+{
+  "to_be_confirmed_by_woody": true,
+  "about": "Starting assumptions so the audit has something to compare against. They are not industry facts and not a recommendation. Replace every number with your own targets before acting on the report.",
+  "currency_symbol": "$",
+  "bottle_markup_bands": {
+    "to_be_confirmed_by_woody": true,
+    "about": "Menu price divided by cost, by cost tier. A bottle below the low end is flagged as a possible margin leak; above the high end as a possible value concern for guests.",
+    "bands": [
+      {"cost_up_to": 20, "low": 3.0, "high": 4.0},
+      {"cost_up_to": 50, "low": 2.6, "high": 3.5},
+      {"cost_up_to": 100, "low": 2.2, "high": 3.0},
+      {"cost_up_to": null, "low": 1.7, "high": 2.6}
+    ]
+  },
+  "by_the_glass": {
+    "to_be_confirmed_by_woody": true,
+    "pour_ml": 150,
+    "min_glass_price_to_bottle_cost": 1.0,
+    "min_count": 6,
+    "expected_types": ["sparkling", "white", "red"],
+    "nice_to_have_types": ["rose", "sweet"],
+    "min_price_spread": 1.5
+  },
+  "price_ladder": {
+    "to_be_confirmed_by_woody": true,
+    "about": "A gap is flagged when the next bottle up costs more than max_step_ratio times the one below AND at least min_gap more in money.",
+    "max_step_ratio": 1.5,
+    "min_gap": 25,
+    "min_wines_per_group": 4
+  },
+  "formats": {
+    "to_be_confirmed_by_woody": true,
+    "assumed_ml_when_missing": 750,
+    "magnum_min_price_multiple": 2.0
+  },
+  "report": {
+    "max_lines_per_finding": 5
+  }
+}

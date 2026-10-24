@@ -1,0 +1,17 @@
+# The Juniper Table (fictional), dinner menu
+TO START
+Oysters on the half shell, mignonette  24
+Charred asparagus, goat cheese, lemon, herbs  18
+Crispy calamari, chili aioli  19
+
+MAINS
+Halibut, beurre blanc, peas  42
+Mushroom risotto, aged parmesan  32
+Duck breast, cherry jus  46
+Grilled ribeye, bone marrow, peppercorn jus  64
+Szechuan pork belly, cucumber  36
+
+DESSERT
+Dark chocolate tart  16
+Cheese board, three cheeses, quince  22
+Lemon posset, shortbread  14

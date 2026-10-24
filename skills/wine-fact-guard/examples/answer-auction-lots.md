@@ -1,0 +1,1 @@
+Highlights of the sale include a 1959 Domaine Ponsot Clos Saint-Denis, a case of Château d'Yquem 2012, a magnum of Screaming Eagle 1989 and a bottle of Penfolds Grange 1948. The catalogue also lists Château d'Yquem 2011, a Y d'Yquem 2012 and Opus One 1979, the estate's first vintage.

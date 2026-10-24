@@ -1,0 +1,16 @@
+check_reply: 5 flags (checked against 15 list entries)
+
+Matched to the list:
+  - Paper Moon Vineyards, Hillside Pinot Noir 2021 (bottle $82, glass $18), list line 9
+
+Flags:
+  1. [vintage_mismatch] "Paper Moon Vineyards Hillside Pinot Noir 2019 at $78, which is one of my favourite wines on the list"
+     Reply gives 2019 for Paper Moon Vineyards, Hillside Pinot Noir 2021; the list has 2021.
+  2. [price_mismatch] "Paper Moon Vineyards Hillside Pinot Noir 2019 at $78, which is one of my favourite wines on the list"
+     Reply quotes $78 for Paper Moon Vineyards, Hillside Pinot Noir 2021; the list has $18, $82.
+  3. [not_on_list] "Domaine Hors-Liste"
+     Could not find this wine on the list. Remove it, or check the list by hand if it is a spelling difference.
+  4. [sensory_claim] "a beautiful wine for duck. When I tasted it, I picked up notes of dark cherry and forest"
+     First-person tasting or experience claim. The assistant has never tasted anything; describe the wine from the list or producer notes.
+  5. [sensory_claim] "2019 at $78, which is one of my favourite wines on the list."
+     First-person tasting or experience claim. The assistant has never tasted anything; describe the wine from the list or producer notes.

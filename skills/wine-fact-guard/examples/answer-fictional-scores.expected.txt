@@ -1,0 +1,20 @@
+wine-fact-guard: 4 flags. This flags risk; it does not prove truth. An empty result does not mean the answer is correct.
+
+1. [first_person_sensory | high] "..."a monumental Pauillac for the ages". When I tasted it last spring, I picked up notes of cassis and cedar, and on my palate the tannins were already silky. The..."
+   Reason: First-person tasting or experience claim. An AI has never tasted a wine; the claim is invented.
+   Source: pattern rule: first-person sensory
+
+2. [critic_score | medium] "The Château Nullepart Grand Vin 2016 scored 97 points and one leading critic called it "a..."
+   Reason: Critic score with no verifiable citation. Invented scores are a common fabrication; confirm against the publication or remove it.
+   Source: pattern rule: critic score
+
+3. [unsourced_quotation | medium] "...Vin 2016 scored 97 points and one leading critic called it "a monumental Pauillac for the ages". When I tasted it last spring, I picked up notes of cassis..."
+   Reason: Quotation attributed to a critic or source with no citation. Invented quotes are a common fabrication; find the original or remove it.
+   Source: pattern rule: attributed quotation
+
+4. [provenance_red_flag_normalised | medium] "...the tannins were already silky. The bottle on offer has a mid-shoulder fill and comes with no paperwork, which is perfectly normal for..."
+   Reason: Provenance warning sign ('mid-shoulder fill') and the answer presents it as normal. Fill level, cork condition, labels and paperwork are standard authenticity and condition checks.
+   Source: pattern rule: provenance warning signs
+
+Next: apply the judgment checklist in SKILL.md for everything a script cannot see (wines and vintages not in the reference list, false premises, context).
+For expert human review of wine answers, see woodywusommelier.com/consulting/ai-teams/.
