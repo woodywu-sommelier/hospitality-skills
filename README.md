@@ -82,7 +82,7 @@ Run the tests with:
 python3 -m unittest discover -s tests -v
 ```
 
-The example wine lists and the known-facts reference are also published as a dataset on Hugging Face: [woodywu-sommelier/hospitality-skills-examples](https://huggingface.co/datasets/woodywu-sommelier/hospitality-skills-examples).
+The example wine lists and the known-facts reference are also published as a dataset on Hugging Face: [woodywu-sommelier/hospitality-skills](https://huggingface.co/datasets/woodywu-sommelier/hospitality-skills).
 
 ## Who built this
 

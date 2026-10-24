@@ -7,7 +7,7 @@ This licence covers the example and reference data in this repository:
   - skills/*/examples/ (wine lists, menus, conversations, answers and expected outputs)
   - skills/*/references/*.json (pricing defaults, pairing rules, house settings, known facts)
   - the same files mirrored in the Hugging Face dataset
-    woodywu-sommelier/hospitality-skills-examples
+    woodywu-sommelier/hospitality-skills
 
 You are free to share and adapt this material for any purpose, including
 commercially, as long as you give appropriate credit, provide a link to the
