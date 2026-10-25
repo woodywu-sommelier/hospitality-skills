@@ -39,6 +39,10 @@ Example data and reference facts from [Hospitality Skills by Woody Wu](https://g
 | `wine-lists/bistro-lanterne-expected-report.md` | The audit report for it, including what was skipped for lack of data. |
 | `wine-lists/copper-fig-list.csv` | A fictional list used by the `house-somm` skill to check that an assistant names only wines on the list. |
 
+## Use with agents
+
+The skills that use this data also run as MCP tools (`audit_wine_list`, `check_reply`, `fact_guard`) for Claude Code, Claude Desktop and other MCP clients. The server runs locally with no installs or API keys: [mcp/README.md](https://github.com/woodywu-sommelier/hospitality-skills/blob/main/mcp/README.md).
+
 ## Important notes
 
 - **Every venue and producer in the wine lists is fictional.** Regions and grapes are real so the style checks work. Prices and costs are invented and say nothing about any real wine.
