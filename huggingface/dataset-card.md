@@ -44,7 +44,7 @@ Example data and reference facts from [Hospitality Skills by Woody Wu](https://g
 - **Every venue and producer in the wine lists is fictional.** Regions and grapes are real so the style checks work. Prices and costs are invented and say nothing about any real wine.
 - **Real producers appear only in the known facts**, and only as sourced historical facts.
 - **The known facts flag risk; they do not prove truth.** The list is small and curated. A wine missing from it is not thereby real or fake.
-- Entries were checked against their sources on the date in `verified_on`. Open the links before relying on an entry.
+- Every source was opened and confirmed to state its entry's fact on the date in `verified_on` (2026-10-25).
 
 ## Licence and citation
 

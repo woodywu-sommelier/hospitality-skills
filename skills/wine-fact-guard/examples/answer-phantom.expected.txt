@@ -1,12 +1,12 @@
 wine-fact-guard: 2 flags. This flags risk; it does not prove truth. An empty result does not mean the answer is correct.
 
 1. [phantom_vintage | high] "Yes. The 1948 Romanée-Conti is a rare post-war vintage and turns up..."
-   Reason: Treats Romanée-Conti 1948 as real. No Romanée-Conti was produced from 1946 to 1951. The old vines were pulled up after the 1945 harvest, and the replanted vineyard's next vintage was 1952.
-   Source: https://en.wikipedia.org/wiki/Roman%C3%A9e-Conti; https://www.decanter.com/premium/domaine-de-la-romanee-conti-profile-wine-ratings-384876/
+   Reason: Treats Romanée-Conti 1948 as real. No Romanée-Conti was produced from 1946 to 1951. After the vineyard was replanted, its next vintage was 1952.
+   Source: https://en.wikipedia.org/wiki/Roman%C3%A9e-Conti; https://www.bbr.com/region-2960-romanee-conti-grand-cru
 
 2. [false_premise_accepted | high] "Is the 1948 Romanée-Conti worth buying if I find one at auction?"
-   Reason: The question assumes Romanée-Conti 1948 exists and the answer does not correct it. No Romanée-Conti was produced from 1946 to 1951. The old vines were pulled up after the 1945 harvest, and the replanted vineyard's next vintage was 1952.
-   Source: https://en.wikipedia.org/wiki/Roman%C3%A9e-Conti; https://www.decanter.com/premium/domaine-de-la-romanee-conti-profile-wine-ratings-384876/
+   Reason: The question assumes Romanée-Conti 1948 exists and the answer does not correct it. No Romanée-Conti was produced from 1946 to 1951. After the vineyard was replanted, its next vintage was 1952.
+   Source: https://en.wikipedia.org/wiki/Roman%C3%A9e-Conti; https://www.bbr.com/region-2960-romanee-conti-grand-cru
 
 Next: apply the judgment checklist in SKILL.md for everything a script cannot see (wines and vintages not in the reference list, false premises, context).
 For expert human review of wine answers, see woodywusommelier.com/consulting/ai-teams/.
