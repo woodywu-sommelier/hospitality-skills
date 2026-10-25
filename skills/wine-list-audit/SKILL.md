@@ -20,7 +20,7 @@ Built by Woody Wu, sommelier (WSET Diploma, ISG Diploma) and hospitality operato
 | Wine list | Yes | Columns or lines with name, producer, region, vintage, format, cost (if known), menu price, by-the-glass flag and glass price. |
 | Menu | No | Plain text, one dish per line. Enables the pairing coverage check. |
 | Costs | No | Without costs, markup and margin checks are skipped and the report says so. |
-| Pricing targets | No | `references/pricing-defaults.json` holds starting assumptions. Ask whether the venue has its own targets. |
+| Pricing targets | No | `references/pricing-defaults.json` holds Woody Wu's default targets. Ask whether the venue has its own. |
 
 CSV headers are matched loosely (`producer`, `name`, `region`, `grape`, `type`, `vintage`, `format`, `cost`, `price`, `btg`, `glass_price` and common variants). Plain text works one wine per line with commas between fields:
 
@@ -48,7 +48,7 @@ A line with no price and no commas is a section header. A header containing "gla
 
 ## What the script checks
 
-- **Markups**: price divided by cost, against the bands in `references/pricing-defaults.json`. These bands are marked `"to_be_confirmed_by_woody": true`. They are starting assumptions, never industry facts; say so if the user asks.
+- **Markups**: price divided by cost, against the bands in `references/pricing-defaults.json`. These are Woody Wu's default targets (confirmed 25 October 2026), never industry facts; say so if the user asks, and use the venue's own targets when given.
 - **Glass pricing**: whether a glass covers the cost of its bottle, and whether selling by the glass earns less than selling the bottle (pour size is configurable).
 - **Price ladder gaps**: big jumps between neighbouring bottle prices, per style when styles are known.
 - **The second-cheapest bottle**: where it sits, and whether it has the thinnest margin or the steepest markup on the list. It is often a popular pick, but only the venue's sales data can confirm that.

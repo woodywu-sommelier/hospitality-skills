@@ -54,7 +54,7 @@ Hand your list to `wine-list-audit` and you get the first pass a sommelier would
    - Paper Moon Vineyards, Pinot Noir 2021: cost $26, price $64, 2.46x (your band 2.6x to 3.5x). At 2.6x the price would be $67.60, $3.60 more per bottle sold.
 ```
 
-What it will never do: invent costs, sales or prices. If your list has no costs, the report says markups were not checked and why. The markup bands are starting assumptions in a settings file for you to change, not industry rules.
+What it will never do: invent costs, sales or prices. If your list has no costs, the report says markups were not checked and why. The markup bands are my default targets from practice, in a settings file for you to change. They are not industry rules.
 
 `house-somm` is the same discipline on the floor: an assistant that only sells what is in your cellar, respects a guest's budget without making them say a number, offers a glass when there is one, and calls a person for allergies, faulty bottles and very high-value bottles.
 

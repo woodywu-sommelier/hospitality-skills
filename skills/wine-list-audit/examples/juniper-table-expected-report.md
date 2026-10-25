@@ -1,7 +1,7 @@
 # Wine list audit: The Juniper Table (fictional)
 
 Read 19 wines (19 with a bottle price, 6 by the glass). Menu: 11 dishes.
-Price bands come from references/pricing-defaults.json. They are starting assumptions to be confirmed, not industry facts.
+Price bands come from references/pricing-defaults.json: Woody Wu's default targets, not industry rules. Set your own for your venue.
 
 ## Fix first
 

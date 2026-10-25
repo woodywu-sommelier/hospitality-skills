@@ -159,11 +159,13 @@ class AuditTests(unittest.TestCase):
                                 year=TEST_YEAR, title=title)
                 self.assertEqual(out, (EXAMPLES / expected).read_text(encoding="utf-8"))
 
-    def test_pricing_defaults_are_marked_unconfirmed(self):
+    def test_pricing_defaults_are_confirmed_and_dated(self):
         cfg = json.loads((REFERENCES / "pricing-defaults.json").read_text())
-        self.assertIs(cfg["to_be_confirmed_by_woody"], True)
+        self.assertIs(cfg["to_be_confirmed_by_woody"], False)
+        self.assertEqual(cfg["confirmed_by_woody_on"], "2026-10-25")
         for section in ("bottle_markup_bands", "by_the_glass", "price_ladder", "formats"):
-            self.assertIs(cfg[section]["to_be_confirmed_by_woody"], True, section)
+            self.assertIs(cfg[section]["to_be_confirmed_by_woody"], False, section)
+            self.assertEqual(cfg[section]["confirmed_by_woody_on"], "2026-10-25", section)
         rules = json.loads((REFERENCES / "pairing-rules.json").read_text())
         self.assertIs(rules["to_be_confirmed_by_woody"], True)
 

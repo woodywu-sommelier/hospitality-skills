@@ -656,8 +656,8 @@ def audit(wine_list: WineList, menu_text: str | None, cfg: dict, rules: dict, ye
 
 def render(report: Report) -> str:
     out = [f"# Wine list audit: {report.title}", "", report.summary,
-           "Price bands come from references/pricing-defaults.json. They are starting "
-           "assumptions to be confirmed, not industry facts.", ""]
+           "Price bands come from references/pricing-defaults.json: Woody Wu's default "
+           "targets, not industry rules. Set your own for your venue.", ""]
     out.append("## Fix first")
     out.append("")
     fixes = report.by_level(FIX)

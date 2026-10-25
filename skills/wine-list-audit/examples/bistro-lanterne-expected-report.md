@@ -1,7 +1,7 @@
 # Wine list audit: Bistro Lanterne (fictional)
 
 Read 18 wines (17 with a bottle price, 5 by the glass).
-Price bands come from references/pricing-defaults.json. They are starting assumptions to be confirmed, not industry facts.
+Price bands come from references/pricing-defaults.json: Woody Wu's default targets, not industry rules. Set your own for your venue.
 
 ## Fix first
 
