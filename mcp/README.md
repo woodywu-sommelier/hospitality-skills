@@ -22,7 +22,14 @@ git clone https://github.com/woodywu-sommelier/hospitality-skills
 
 Then point your client at `mcp/server.py` inside that folder, using its full path.
 
-**Claude Code**
+**Claude Code**: the plugin installs the skills and these tools together:
+
+```
+/plugin marketplace add woodywu-sommelier/hospitality-skills
+/plugin install hospitality-skills@hospitality-skills
+```
+
+Or add only the tools:
 
 ```
 claude mcp add hospitality-skills -- python3 /full/path/to/hospitality-skills/mcp/server.py

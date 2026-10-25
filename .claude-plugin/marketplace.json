@@ -12,13 +12,7 @@
     {
       "name": "hospitality-skills",
       "description": "Wine list audit, a list-only house sommelier, and a wine fact guard for AI teams.",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/wine-list-audit",
-        "./skills/house-somm",
-        "./skills/wine-fact-guard"
-      ]
+      "source": "./"
     }
   ]
 }

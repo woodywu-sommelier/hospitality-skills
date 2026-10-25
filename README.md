@@ -35,10 +35,10 @@ Then swap in your own files. Your wine list can be a spreadsheet export or text 
 
 ### Use them as Agent Skills
 
-- **Claude Code**: `/plugin marketplace add woodywu-sommelier/hospitality-skills`, then `/plugin install hospitality-skills@hospitality-skills`. Or copy any folder under `skills/` into `~/.claude/skills/`.
+- **Claude Code**: `/plugin marketplace add woodywu-sommelier/hospitality-skills`, then `/plugin install hospitality-skills@hospitality-skills`. This installs the three skills and the MCP tools together. Or copy any folder under `skills/` into `~/.claude/skills/`.
 - **Claude apps with custom skills**: zip a single skill folder (for example `skills/wine-list-audit/`) and upload it as a custom skill.
 - **Any other agent**: each `SKILL.md` is plain Markdown with YAML front matter (`name`, `description`). Point your agent at the folder; the scripts run anywhere Python does.
-- **As MCP tools**: `mcp/server.py` exposes all three skills as tools (`audit_wine_list`, `check_reply`, `fact_guard`) for any MCP client, running locally with no installs or keys. In Claude Code: `claude mcp add hospitality-skills -- python3 /full/path/to/hospitality-skills/mcp/server.py`. Setup for Claude Desktop and other clients: [mcp/README.md](mcp/README.md).
+- **As MCP tools**: `mcp/server.py` exposes all three skills as tools (`audit_wine_list`, `check_reply`, `fact_guard`) for any MCP client, running locally with no installs or keys. Claude Code users get them with the plugin above; to add only the tools: `claude mcp add hospitality-skills -- python3 /full/path/to/hospitality-skills/mcp/server.py`. Setup for Claude Desktop and other clients: [mcp/README.md](mcp/README.md).
 
 ## For owners and managers
 
