@@ -63,7 +63,7 @@ What it will never do: invent costs, sales or prices. If your list has no costs,
 - **Guardrail**: run `check_reply.py` on every assistant reply. It exits `1` on any flag and prints JSON with `--json`, so it drops into a pipeline or CI. Block or regenerate on `not_on_list`, `vintage_mismatch`, `price_mismatch` and `sensory_claim`.
 - **Evaluation**: `fact_guard.py` gives deterministic flags (sourced known facts, score and quotation patterns, provenance and sensory patterns), and `SKILL.md` gives the model a judgment checklist for everything else. Use both: the script is high precision on a narrow set; the checklist covers the long tail.
 - **Reference data**: `skills/wine-fact-guard/references/known-facts.json` lists vintages that were never made and first vintages, each with source URLs and a verification date. Entries are added only with two independent sources.
-- **Honest limits**: the fact guard flags risk. It does not prove truth, and an empty result does not mean an answer is correct. The full benchmark, The Constance Test, is coming.
+- **Honest limits**: the fact guard flags risk. It does not prove truth, and an empty result does not mean an answer is correct. For a full benchmark, see [The Constance Test](https://github.com/woodywu-sommelier/constance-test).
 
 ## What's in the box
 

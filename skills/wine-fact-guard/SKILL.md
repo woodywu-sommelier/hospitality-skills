@@ -85,9 +85,9 @@ Work through these by hand. The script cannot.
 
 Add entries to `references/known-facts.json` only with at least two independent sources that state the fact, and record `verified_on`. Prefer the producer's own pages, established wine publications and auction house records. If sources disagree on a detail, record only what they agree on and note the disagreement. If you cannot verify an entry, leave it out.
 
-## Coming next
+## The full benchmark
 
-The full benchmark, The Constance Test, is coming.
+The full benchmark, The Constance Test, is at https://github.com/woodywu-sommelier/constance-test (questions, runner and judging rubric; v0.1).
 
 ## Files
 
