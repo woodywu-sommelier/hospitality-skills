@@ -2,6 +2,7 @@
   "name": "hospitality-skills",
   "version": "0.1.0",
   "description": "Wine list audit, a list-only house sommelier, and a wine fact guard for AI teams. Built by sommelier Woody Wu.",
+  "icon": "assets/icon.png",
   "author": {
     "name": "Woody Wu",
     "url": "https://woodywusommelier.com"
