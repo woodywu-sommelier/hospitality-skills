@@ -34,12 +34,12 @@ Built by Woody Wu, sommelier (WSET Diploma, ISG Diploma) and wine domain expert 
 | --- | --- | --- |
 | `phantom_vintage` | A wine named with a year it was never made, from `references/known-facts.json`. | The entry's source URLs. |
 | `false_premise_accepted` | The question names such a wine and the answer does not push back. | The entry's source URLs. |
-| `critic_score` | Points, /100 and /20 scores, "rated 98". Flagged harder when no link is in the same sentence. | Pattern rule. |
+| `critic_score` | Points, /100 and /20 scores, "rated 98". Flagged harder when no link is in the same sentence. A score the answer declines to give ("I won't quote 99 points") is not flagged. | Pattern rule. |
 | `unsourced_quotation` | A quotation attributed to a critic or source with no citation. | Pattern rule. |
-| `provenance_red_flag_normalised` | Low fill, seepage, pushed cork, relabelling, no paperwork and similar, mentioned without caution or called normal. | Pattern rule. |
+| `provenance_red_flag_normalised` | Low fill, seepage, pushed cork, relabelling, no paperwork and similar, mentioned without caution or called normal. Rejecting the reassurance ("isn't normal for", "the discount isn't a bargain") counts as caution. | Pattern rule. |
 | `first_person_sensory` | "I tasted", "on my palate", "my favourite", "in my experience". An AI has never tasted anything. | Pattern rule. |
 
-Mentions the answer itself corrects ("There is no 1948 Romanée-Conti") are listed as handled correctly, not flagged.
+Mentions the answer itself corrects ("There is no 1948 Romanée-Conti") are listed as handled correctly, not flagged. The denial has to be about that bottle: a negation elsewhere in the sentence ("there is no finer Champagne than the 2001 ...", "not only made in small amounts") does not count as a correction.
 
 ## Judgment checklist
 

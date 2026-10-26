@@ -167,6 +167,26 @@
         "https://www.winespectator.com/articles/top-burgundy-winemakers-will-testify-against-alleged-counterfeiter-48410"
       ],
       "verified_on": "2026-10-25"
+    },
+    {
+      "id": "dom-perignon-2001",
+      "wine": "Dom Pérignon",
+      "producer": "Moët & Chandon",
+      "kind": "no_production",
+      "years": [2001],
+      "fact": "Dom Pérignon released no 2001 vintage. The released vintages go 1999, 2000, 2002.",
+      "match": {
+        "aliases": [
+          "Dom Pérignon",
+          "Dom Perignon"
+        ]
+      },
+      "notes": "Both sources list the vintages 1999, 2000, 2002 with no 2001. Their rosé lists also skip 2001.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dom_P%C3%A9rignon",
+        "https://thefinestbubble.com/news-and-reviews/dom-perignon-history/"
+      ],
+      "verified_on": "2026-10-26"
     }
   ]
 }

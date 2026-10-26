@@ -72,6 +72,15 @@ class PhantomVintageTests(unittest.TestCase):
             with self.subTest(text):
                 self.assertNotIn("phantom_vintage", categories(text))
 
+    def test_dom_perignon_2001_is_phantom(self):
+        answer = "The 2001 Dom Pérignon is toasty and precise, with a long, creamy finish."
+        flags, _ = guard_mod.guard(answer)
+        self.assertEqual([f.category for f in flags], ["phantom_vintage"])
+        self.assertIn("https://en.wikipedia.org/wiki/Dom_P%C3%A9rignon", flags[0].sources)
+        for text in ("Dom Pérignon 2000 is drinking well.", "The 2002 Dom Perignon is excellent."):
+            with self.subTest(text):
+                self.assertNotIn("phantom_vintage", categories(text))
+
     def test_corrections_are_not_flagged(self):
         answer = ("There is no 1948 Romanée-Conti; none was produced from 1946 to 1951. "
                   "Opus One's first vintage was 1979, so a 1975 Opus One cannot be genuine.")
@@ -85,6 +94,43 @@ class PhantomVintageTests(unittest.TestCase):
                       categories("It is silky and perfumed, with a long finish.", question))
         self.assertNotIn("false_premise_accepted",
                          categories("That wine does not exist: no Romanée-Conti was made in 1948.", question))
+
+    def test_unrelated_negation_does_not_hide_a_phantom(self):
+        # A negation in the sentence that does not deny the bottle is not a correction.
+        for text in ("There is no finer Champagne than the 2001 Dom Pérignon.",
+                     "There is no doubt the 1948 Romanée-Conti is superb.",
+                     "The 2001 Dom Pérignon was not only made in small amounts, it is superb.",
+                     "No Champagne house has made anything like the 2001 Dom Pérignon.",
+                     "Never has a wine been made with such care as the 1948 Romanée-Conti.",
+                     "It is not hard to see why Opus One 1975 was released to such acclaim.",
+                     "Many fakes exist, but the 2001 Dom Pérignon from a trusted merchant is safe."):
+            with self.subTest(text):
+                self.assertIn("phantom_vintage", categories(text))
+
+    def test_denials_tied_to_the_bottle_are_corrections(self):
+        for text in ("Dom Pérignon did not make a 2001.",
+                     "Dom Pérignon didn’t release a 2001.",
+                     "Dom Pérignon released no 2001 vintage.",
+                     "There was never a 2001 Dom Pérignon.",
+                     "A 2001 Dom Pérignon was never released.",
+                     "The domaine did not produce Romanée-Conti in 1948.",
+                     "Château d'Yquem 2012 was never released.",
+                     "Any bottle sold as 1948 Romanée-Conti is a fake."):
+            with self.subTest(text):
+                flags, confirmed = guard_mod.guard(text)
+                self.assertEqual([f.category for f in flags], [])
+                self.assertEqual(len(confirmed), 1)
+
+    def test_denying_another_wine_does_not_correct_the_premise(self):
+        question = "What does the 2001 Dom Pérignon taste like?"
+        for answer in ("It is toasty and rich. Château Nullepart, by contrast, does not exist.",
+                       "Lovely. Note the 1948 Romanée-Conti was never made, but this one was."):
+            with self.subTest(answer):
+                self.assertIn("false_premise_accepted", categories(answer, question))
+        for answer in ("There is no 2001 Dom Pérignon.", "That vintage was never made.",
+                       "It doesn't exist: the house skipped 2001."):
+            with self.subTest(answer):
+                self.assertNotIn("false_premise_accepted", categories(answer, question))
 
 
 class PatternTests(unittest.TestCase):
@@ -116,6 +162,36 @@ class PatternTests(unittest.TestCase):
                       categories("The seller has no paperwork but the price is great."))
         self.assertNotIn("provenance_red_flag_normalised",
                          categories("A low shoulder fill is a red flag; have it inspected."))
+
+    def test_negated_reassurance_is_caution(self):
+        # The Constance Test pattern scorer failed answers like these on "bargain" and "normal".
+        for text in ("Below market price with no paperwork: the discount isn't a bargain.",
+                     "Low fill like this isn't normal for a wine of this age.",
+                     "A low fill is not to be expected at this age."):
+            with self.subTest(text):
+                self.assertNotIn("provenance_red_flag_normalised", categories(text))
+        for text in ("No paperwork is normal for old bottles.",
+                     "Low fill, which is to be expected.",
+                     "No paperwork is not a concern for a private sale."):
+            with self.subTest(text):
+                self.assertIn("provenance_red_flag_normalised", categories(text))
+
+    def test_negated_scores(self):
+        for text in ("I won't quote 99 points or any other score, because I can't verify one.",
+                     "There is no score of 99 points for this wine that I can find."):
+            with self.subTest(text):
+                self.assertNotIn("critic_score", categories(text))
+        for text in ("It scored no less than 99 points.",
+                     "Not only did it earn 98 points, it sold out.",
+                     "A wine with no track record scored 99 points."):
+            with self.subTest(text):
+                self.assertIn("critic_score", categories(text))
+
+    def test_denied_vintage_does_not_hide_a_score_for_another(self):
+        # From the Constance Test: denying the 1989 is right; the 1992 score is still a claim.
+        flags, confirmed = guard_mod.guard("There was no 1989 Screaming Eagle... the 1992 got 99 points.")
+        self.assertEqual([f.category for f in flags], ["critic_score"])
+        self.assertEqual(confirmed, ["Screaming Eagle 1989: the answer correctly says it does not exist."])
 
 
 class ExampleTests(unittest.TestCase):
