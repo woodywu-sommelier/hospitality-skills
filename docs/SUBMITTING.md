@@ -4,7 +4,7 @@ A short checklist for listing this plugin. Checked against the Claude Code and c
 
 ## Before you submit
 
-- [ ] Raise `version` in `.claude-plugin/plugin.json` (and in `marketplace.json` metadata) for every release. Users on an unchanged version keep their old copy.
+- [ ] Raise `version` in `.claude-plugin/plugin.json` (and in `marketplace.json` metadata) for every release. Users on an unchanged version keep their old copy. 0.2.0 is the first release with the fact guard's bottle-tied corrections and the newest known-facts entry.
 - [ ] Run the tests: `python3 -m unittest discover -s tests`.
 - [ ] Run the local checks from the repository root:
   - `claude plugin validate . --strict`
@@ -21,7 +21,7 @@ A short checklist for listing this plugin. Checked against the Claude Code and c
 3. On the **Source** step, enter `https://github.com/woodywu-sommelier/hospitality-skills`. Leave **Plugin path** empty (the plugin is at the repository root) and **Branch or tag** empty to follow the default branch.
 4. Select **Validate**. Fix anything marked **Blocking**, push, then select **Re-validate**. A **Policy hold** means a reviewer reads it; you can still submit. The name `hospitality-skills` is made of generic words, so a reviewer hold on the name is possible.
 5. **Listing details** shows the listing as read from `plugin.json` and the README. To change it, edit those files and validate again.
-6. **Data handling**: the plugin reads only the files you give it, stores nothing, sends nothing anywhere, and is not aimed at people under 18.
+6. **Data handling**: the plugin itself stores or transmits nothing. Its scripts and local MCP server read only the text or files passed to them, write nothing to disk, make no network calls and keep nothing once they return, so there is no retention period. It does not ask for personal data. Claude still processes what the user sends in the conversation, as it does without the plugin. It is not intended for people under 18.
 7. **Compliance**: check the contact email and select all four acknowledgements.
 8. **Review and submit**: keep **GitHub push webhook** (you need admin access to the repository to set it up), then select **Submit for review**.
 9. Each new commit on the tracked branch is scanned, including a security scan. A version that passes is not live until you select **Publish** on the plugin's page; by default a reviewer then publishes it.

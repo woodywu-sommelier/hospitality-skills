@@ -1,6 +1,6 @@
 # Hospitality Skills by Woody Wu
 
-Agent Skills for real restaurant, hotel and sommelier work, written by a working sommelier. Three skills, each useful on day one, each with plain Python 3.11 scripts that use the standard library only: nothing to install, no API keys, no data leaves your machine.
+Agent Skills for real restaurant, hotel and sommelier work, written by a working sommelier. Three skills, each useful on day one, each with plain Python 3.11 scripts that use the standard library only: nothing to install, no API keys, and the scripts themselves store and send nothing.
 
 | Skill | Who it's for | What it does |
 | --- | --- | --- |

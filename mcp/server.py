@@ -26,7 +26,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = ROOT / "skills"
 SERVER_INFO = {"name": "hospitality-skills", "title": "Hospitality Skills by Woody Wu",
-               "version": "0.1.0"}
+               "version": "0.2.0"}
 PROTOCOL_VERSIONS = ("2025-06-18", "2025-03-26", "2024-11-05")
 
 
