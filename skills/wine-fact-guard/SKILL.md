@@ -39,7 +39,7 @@ Built by Woody Wu, sommelier (WSET Diploma, ISG Diploma) and wine domain expert 
 | `provenance_red_flag_normalised` | Low fill, seepage, pushed cork, relabelling, no paperwork and similar, mentioned without caution or called normal. Rejecting the reassurance ("isn't normal for", "the discount isn't a bargain") counts as caution. | Pattern rule. |
 | `first_person_sensory` | "I tasted", "on my palate", "my favourite", "in my experience". An AI has never tasted anything. | Pattern rule. |
 
-Mentions the answer itself corrects ("There is no 1948 Romanée-Conti") are listed as handled correctly, not flagged.
+Mentions the answer itself corrects ("There is no 1948 Romanée-Conti") are listed as handled correctly, not flagged. The denial has to be about that bottle: a negation elsewhere in the sentence ("there is no finer Champagne than the 2001 ...", "not only made in small amounts") does not count as a correction.
 
 ## Judgment checklist
 

@@ -35,13 +35,30 @@ DISCLAIMER = ("This flags risk; it does not prove truth. An empty result does no
 YEAR_RE = re.compile(r"\b(1[6-9]\d\d|20\d\d)\b")
 ABBREVIATIONS = {"st", "ste", "mt", "no", "vs", "dr", "mr", "mrs", "ms", "approx", "ca"}
 
-CORRECTION_RE = re.compile(
-    r"(?:\b(?:no|not|never|nor)\b|n't)[^.!?\n]{0,60}\b(?:produced|made|released|bottled|"
-    r"exist\w*)\b|\bthere (?:is|was|are|were) no\b|\b(?:cannot|can't|could not|couldn't) be "
-    r"genuine\b|\bno such\b|\bdoes not exist\b|\bdid not exist\b|"
-    r"\bcould not exist\b|\bcannot exist\b|\bdeclassified\b|\breplant\w*\b|\bfalse premise\b|"
-    r"\bcounterfeit\b|\bfake\b|\bnot genuine\b|\bbefore\b[^.!?\n]{0,40}\bfirst\b",
-    re.IGNORECASE)
+YEAR = r"(?:1[6-9]\d\d|20\d\d)"
+MAKE_VERB = r"(?:make|made|produce[sd]?|release[sd]?|bottle[sd]?|declare[sd]?)"
+# A correction has to deny the bottle itself. A negation elsewhere in the sentence ("there is
+# no finer Champagne than the 2001 ...", "it was not only made in small amounts") is not one.
+# Right before the wine: "there is no 1948 Romanée-Conti", "never a 2001", "did not make the".
+DENIED_BEFORE_RE = re.compile(
+    r"(?:\b(?:no|nor)|(?:\b(?:not|never)|n['’]t) (?:a|an|any)|"
+    r"(?:\b(?:not|never)|n['’]t) " + MAKE_VERB + r"(?: (?:a|an|any))?)"
+    r"\s+(?:the\s+)?(?:" + YEAR + r"\s+)?$", re.IGNORECASE)
+# Right after it: "Dom Pérignon did not make a 2001", "Yquem 1992 was never released",
+# "Yquem released no 1992".
+DENIED_AFTER_RE = re.compile(
+    r"^(?:\s*,?\s*" + YEAR + r",?)?(?:\s+vintage)?\s+"
+    r"(?:(?:(?:was|were|is|are|has|have|had|did|does|do)\s*)?(?:never|not|n['’]t)\s+"
+    r"(?:(?:been|ever|actually)\s+)*(?:" + MAKE_VERB + r"|exist\w*)\b|"
+    r"(?:made|produced|released|bottled|declared)\s+no\b)", re.IGNORECASE)
+# Anywhere in the clause that names the wine.
+DENIAL_RE = re.compile(
+    r"\b(?:declassified|counterfeit\w*|fakes?|forged|forger(?:y|ies)|not genuine|no such|"
+    r"(?:cannot|can['’]t|could not|couldn['’]t) (?:be genuine|exist)|"
+    r"(?:does|did) ?(?:not|n['’]t) exist|never existed|false premise)\b|"
+    r"\bbefore\b[^.!?\n]{0,40}\bfirst\b", re.IGNORECASE)
+CLAUSE_BREAK_RE = re.compile(
+    r"[;:()\n\u2014]|\b(?:and|but|or|yet|while|whereas|though|although)\b", re.IGNORECASE)
 
 SENSORY_PATTERNS = [
     r"\bI(?:'ve| have)? (?:tasted|sampled|sipped|drunk|drank)\b",
@@ -219,11 +236,18 @@ def violating_years(entry: dict, years: list[int]) -> list[int]:
     return []
 
 
-def sentence_corrects(sentence: str, entry: dict) -> bool:
-    """True when the sentence denies the vintage or gives the real first vintage."""
-    if CORRECTION_RE.search(sentence):
+def mention_corrected(text: str, start: int, end: int, entry: dict) -> bool:
+    """True when the text denies the wine named at start:end, or gives the real first vintage."""
+    s_start, s_end = sentence_bounds(text, start)
+    before, after = text[s_start:start], text[end:s_end]
+    if DENIED_BEFORE_RE.search(before) or DENIED_AFTER_RE.match(after):
+        return True
+    head = CLAUSE_BREAK_RE.split(before)[-1]
+    tail = CLAUSE_BREAK_RE.split(after)[0]
+    if DENIAL_RE.search(head) or DENIAL_RE.search(tail):
         return True
     if entry["kind"] == "first_vintage":
+        sentence = text[s_start:s_end]
         return bool(re.search(r"\bfirst\b", sentence, re.IGNORECASE)
                     and str(entry["first_vintage"]) in sentence)
     return False
@@ -237,9 +261,8 @@ def scan_facts(text: str, facts: list[dict]):
             bad = violating_years(entry, years)
             if not bad:
                 continue
-            s_start, s_end = sentence_bounds(text, start)
             item = (entry, bad, start, end)
-            if sentence_corrects(text[s_start:s_end], entry):
+            if mention_corrected(text, start, end, entry):
                 corrected.append(item)
             else:
                 stated.append(item)
@@ -258,20 +281,22 @@ def merged_spans(text: str, patterns: list[str]) -> list[tuple[int, int]]:
     return [(s, e) for s, e in merged]
 
 
-STRONG_DENIAL_RE = re.compile(
-    r"\b(?:no such (?:wine|vintage|bottle)|(?:does|did|could|can) ?(?:not|n't) exist|"
-    r"false premise|never (?:made|produced|released))\b", re.IGNORECASE)
+# A denial of the wine the question asked about, without naming it: "that wine does not
+# exist", "it was never made", "no such vintage". A denial of some other wine does not count.
+GENERIC_DENIAL_RE = re.compile(
+    r"\b(?:no such (?:wine|vintage|bottle)|false premise|"
+    r"(?:it|that|this|(?:that|this|the|such a) (?:wine|vintage|bottle))\s+"
+    r"(?:(?:does|did|could|can)\s*(?:not|n['’]t) (?:exist|be genuine)|never existed|"
+    r"(?:was|were|has|had|is)\s*(?:never|not|n['’]t)\s+(?:been\s+)?(?:made|produced|released)))\b",
+    re.IGNORECASE)
 
 
 def corrects_entry(answer: str, entry: dict) -> bool:
     """True when the answer pushes back on a false premise about this entry."""
-    if STRONG_DENIAL_RE.search(answer):
+    if GENERIC_DENIAL_RE.search(answer):
         return True
-    for start, _, _ in fact_mentions(answer, entry):
-        s_start, s_end = sentence_bounds(answer, start)
-        if sentence_corrects(answer[s_start:s_end], entry):
-            return True
-    return False
+    return any(mention_corrected(answer, start, end, entry)
+               for start, end, _ in fact_mentions(answer, entry))
 
 
 def check_known_facts(answer, question, facts):

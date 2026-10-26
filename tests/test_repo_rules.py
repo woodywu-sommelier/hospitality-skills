@@ -67,7 +67,7 @@ class ContentRules(unittest.TestCase):
 
     def test_real_producers_only_in_sourced_facts(self):
         names = ["Romanée-Conti", "Romanee-Conti", "Yquem", "Opus One", "Screaming Eagle",
-                 "Penfolds", "Ponsot"]
+                 "Penfolds", "Ponsot", "Dom Pérignon", "Dom Perignon"]
         allowed = {SKILLS / "wine-fact-guard", ROOT / "tests"}
         for path in text_files():
             if any(base in path.parents for base in allowed):
