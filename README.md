@@ -10,12 +10,9 @@ Agent Skills for real restaurant, hotel and sommelier work, written by a working
 
 ## Quick start (60 seconds)
 
-You need Python 3.11 or newer. Nothing else.
+You need Python 3.11 or newer. Nothing else. Clone or download this repository, then run these from its folder:
 
 ```
-git clone https://github.com/woodywu-sommelier/hospitality-skills
-cd hospitality-skills
-
 # Audit a fictional wine list against its menu
 python3 skills/wine-list-audit/scripts/audit_list.py \
   skills/wine-list-audit/examples/juniper-table-list.csv \
