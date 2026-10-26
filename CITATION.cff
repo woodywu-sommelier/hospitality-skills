@@ -10,7 +10,7 @@ authors:
 repository-code: "https://github.com/woodywu-sommelier/hospitality-skills"
 url: "https://woodywusommelier.com"
 license: MIT
-version: 0.1.0
+version: 0.2.0
 keywords:
   - agent skills
   - wine

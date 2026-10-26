@@ -10,7 +10,7 @@ The three Hospitality Skills as tools that any MCP client can call: Claude Code,
 
 Every tool takes `format`: `markdown` (default, for people) or `json` (for programs).
 
-**Runs entirely on your machine.** Python 3.11 or newer, standard library only: nothing to install, no network calls, no API keys. Your wine lists and replies never leave your computer.
+**Runs entirely on your machine.** Python 3.11 or newer, standard library only: nothing to install, no network calls, no API keys. The server itself stores and sends nothing: it reads what it is passed and replies. When Claude calls it, the text is already in your conversation with Claude.
 
 ## Set it up
 
