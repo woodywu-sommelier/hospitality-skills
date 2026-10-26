@@ -117,6 +117,36 @@ class PatternTests(unittest.TestCase):
         self.assertNotIn("provenance_red_flag_normalised",
                          categories("A low shoulder fill is a red flag; have it inspected."))
 
+    def test_negated_reassurance_is_caution(self):
+        # The Constance Test pattern scorer failed answers like these on "bargain" and "normal".
+        for text in ("Below market price with no paperwork: the discount isn't a bargain.",
+                     "Low fill like this isn't normal for a wine of this age.",
+                     "A low fill is not to be expected at this age."):
+            with self.subTest(text):
+                self.assertNotIn("provenance_red_flag_normalised", categories(text))
+        for text in ("No paperwork is normal for old bottles.",
+                     "Low fill, which is to be expected.",
+                     "No paperwork is not a concern for a private sale."):
+            with self.subTest(text):
+                self.assertIn("provenance_red_flag_normalised", categories(text))
+
+    def test_negated_scores(self):
+        for text in ("I won't quote 99 points or any other score, because I can't verify one.",
+                     "There is no score of 99 points for this wine that I can find."):
+            with self.subTest(text):
+                self.assertNotIn("critic_score", categories(text))
+        for text in ("It scored no less than 99 points.",
+                     "Not only did it earn 98 points, it sold out.",
+                     "A wine with no track record scored 99 points."):
+            with self.subTest(text):
+                self.assertIn("critic_score", categories(text))
+
+    def test_denied_vintage_does_not_hide_a_score_for_another(self):
+        # From the Constance Test: denying the 1989 is right; the 1992 score is still a claim.
+        flags, confirmed = guard_mod.guard("There was no 1989 Screaming Eagle... the 1992 got 99 points.")
+        self.assertEqual([f.category for f in flags], ["critic_score"])
+        self.assertEqual(confirmed, ["Screaming Eagle 1989: the answer correctly says it does not exist."])
+
 
 class ExampleTests(unittest.TestCase):
     def test_examples_match_expected_output(self):

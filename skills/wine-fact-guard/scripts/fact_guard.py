@@ -91,6 +91,33 @@ NORMALISING_RE = re.compile(
     r"to be expected|normal for|standard for|nothing unusual|is normal|are normal|"
     r"is common|are common)\b", re.IGNORECASE)
 
+# Negation, but not "not only" or "no less than", which strengthen a claim.
+NEGATOR = (r"(?:\b(?:no|not|never|without|cannot|unable to)\b|n['’]t\b)"
+           r"(?!\s+(?:only|just|less|fewer|lower)\b)")
+SOFTENER = r"(?:\s+(?:really|quite|always|exactly|necessarily|entirely))?"
+# "isn't normal for", "is not to be expected": the normalising phrase right after a negation.
+NEGATED_BEFORE_RE = re.compile(NEGATOR + SOFTENER + r"\s+$", re.IGNORECASE)
+# "the discount isn't a bargain", "this is not normal": rejecting the sign counts as caution.
+NEGATED_REASSURANCE_RE = re.compile(
+    NEGATOR + SOFTENER + r"\s+(?:normal|usual|typical|common|(?:to be )?expected|(?:a )?bargain|"
+    r"(?:a )?(?:good|great) deal|safe|fine|worth it)\b", re.IGNORECASE)
+# A score the answer declines to give or cannot find: "I won't quote 99 points",
+# "there is no score of 99 points that I can find".
+SCORE_REFUSAL_RE = re.compile(
+    NEGATOR + r"\s+(?:\w+\s+){0,3}?(?:quot\w*|giv\w*|cit\w*|invent\w*|verif\w*|confirm\w*|"
+    r"find|found|stat\w*|claim\w*|provid\w*|know of|aware of|score\w*|rat(?:ing|ed)s?|points?)\b|"
+    r"\bno (?:published |public )?(?:record|evidence|mention) of\b", re.IGNORECASE)
+CLAUSE_START_RE = re.compile(
+    r".*(?:[.!?;:,()\n\u2014]|\b(?:and|but|while|whereas|though|although)\b)",
+    re.IGNORECASE | re.DOTALL)
+
+
+def clause_before(text: str, pos: int) -> str:
+    """The part of the clause that comes before pos."""
+    head = text[max(0, pos - 120):pos]
+    m = CLAUSE_START_RE.match(head)
+    return head[m.end():] if m else head
+
 
 @dataclass
 class Flag:
@@ -285,6 +312,8 @@ def check_sensory(answer):
 def check_scores(answer):
     flags = []
     for start, end in merged_spans(answer, SCORE_PATTERNS):
+        if SCORE_REFUSAL_RE.search(clause_before(answer, start)):
+            continue
         s_start, s_end = sentence_bounds(answer, start)
         cited = bool(URL_RE.search(answer[s_start:s_end]))
         if cited:
@@ -322,8 +351,10 @@ def check_provenance(answer):
         if (s_start, s_end) in seen:
             continue
         sentence = answer[s_start:s_end]
-        normalised = NORMALISING_RE.search(sentence)
-        if normalised or not CAUTION_RE.search(sentence):
+        normalised = next((n for n in NORMALISING_RE.finditer(sentence)
+                           if not NEGATED_BEFORE_RE.search(sentence[:n.start()])), None)
+        cautious = CAUTION_RE.search(sentence) or NEGATED_REASSURANCE_RE.search(sentence)
+        if normalised or not cautious:
             seen.add((s_start, s_end))
             how = "presents it as normal" if normalised else "mentions it without any caution"
             flags.append(Flag("provenance_red_flag_normalised", "medium",
