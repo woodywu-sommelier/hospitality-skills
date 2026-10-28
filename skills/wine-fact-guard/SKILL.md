@@ -9,6 +9,8 @@ Built by Woody Wu, sommelier (WSET Diploma, ISG Diploma) and wine domain expert 
 
 **Be clear about the limits.** This flags risk. It does not prove truth, and an empty result does not mean the answer is correct. The reference list is small and curated; most wines in the world are not in it.
 
+**Try it in your browser:** [Did your AI invent a wine?](https://huggingface.co/spaces/woodywu-sommelier/did-your-ai-invent-a-wine) runs this check on any pasted answer, with no install.
+
 ## When to use
 
 - Grading or red-teaming model answers about wine.

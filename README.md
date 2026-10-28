@@ -8,6 +8,8 @@ Agent Skills for real restaurant, hotel and sommelier work, written by a working
 | [`house-somm`](skills/house-somm/) | Restaurants, and AI teams building wine assistants | Makes an assistant recommend only wines on your list, quoting the exact list line (name, vintage, price), matched to the dish, the budget and the guest. Includes a reference prompt and `check_reply.py`, which flags any named wine that is not on the list, a wrong vintage or price, first-person tasting claims, and a missing hand-off to a person. |
 | [`wine-fact-guard`](skills/wine-fact-guard/) | AI teams evaluating wine answers | Reviews an AI-generated wine answer and flags likely fabrication: phantom wines and vintages, invented critic scores or quotations, false premises accepted as true, provenance red flags treated as normal, and first-person sensory claims. Every flag comes with a reason and a source. |
 
+**Try it in your browser:** paste a chatbot's wine answer into [Did your AI invent a wine?](https://huggingface.co/spaces/woodywu-sommelier/did-your-ai-invent-a-wine), a free page that runs `wine-fact-guard` on it. Nothing you paste is stored.
+
 ## Quick start (60 seconds)
 
 You need Python 3.11 or newer. Nothing else. Clone or download this repository, then run these from its folder:
